@@ -1,0 +1,11 @@
+<BOS>_read_a	1
+read_a_book	2
+a_book_a	1
+a_book_<EOS>	2
+combine_a_book	1
+<BOS>_combine_a	1
+a_b_<EOS>	1
+<BOS>_b_combine	1
+b_combine_read	1
+book_a_b	1
+combine_read_a	1
