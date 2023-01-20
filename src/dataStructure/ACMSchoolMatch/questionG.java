@@ -59,13 +59,15 @@ public class questionG {
 //        int[] dp=new int[n];
 //        Arrays.fill(dp,n+1);
 //        dp[0]=0;
-//        for(int i=1;i<n;i++){
-//            dp[i] = Math.min(dp[i - 1] + 1, dp[i]);
+//        for(int i=0;i+1<n;i++){
+////            dp[i] = Math.min(dp[i - 1] + 1, dp[i]);
+//            dp[i+1]=Math.min(dp[i]+1,dp[i+1]);
 //            dp[arr[i]]=Math.min(dp[i]+1,dp[arr[i]]);
 //        }
-//        for(int i=1;i<n;i++){
-//            System.out.println(dp[i]);
+//        for(int i=1;i<n-1;i++){
+//            System.out.print(dp[i]+" ");
 //        }
+//        System.out.print(dp[n-1]);
 //    }
 //}
 

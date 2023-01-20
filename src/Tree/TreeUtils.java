@@ -8,7 +8,7 @@ import java.util.Stack;
  * @data 2021/6/14 16:25
  */
 public class TreeUtils {
-    //å‰åºæ„é€ äºŒå‰æ ‘  æŒ‰ç…§å±‚åºè¾“å…¥
+    //Ç°Ğò¹¹Ôì¶ş²æÊ÷  °´ÕÕ²ãĞòÊäÈë
     static int index=0;
     public static BiTreeNode buildTree(String str,int index){
         char c = str.charAt(index);
@@ -22,8 +22,8 @@ public class TreeUtils {
         return node;
     }
 
-    //å‰åºæ„é€ äºŒå‰æ ‘  æŒ‰ç…§å‰åºè¾“å…¥
-    public static BiTreeNode buildTree(String str){
+    //Ç°Ğò¹¹Ôì¶ş²æÊ÷  °´ÕÕÇ°ĞòÊäÈë
+    public static BiTreeNode  buildTree(String str){
         char c = str.charAt(index++);
         if(c=='#'){
             return null;
@@ -35,7 +35,7 @@ public class TreeUtils {
         return node;
     }
 
-    //å‰åºéå†äºŒå‰æ ‘ é€’å½’
+    //Ç°Ğò±éÀú¶ş²æÊ÷ µİ¹é
     public static void preOrder(BiTreeNode node){
         if(node==null){
             return;
@@ -45,7 +45,7 @@ public class TreeUtils {
         preOrder(node.getRightChild());
     }
 
-    //å…ˆåºéå†äºŒå‰æ ‘ éé€’å½’
+    //ÏÈĞò±éÀú¶ş²æÊ÷ ·Çµİ¹é
     public static void preOrder(BiTreeNode node, Stack<BiTreeNode> stack){
         while(node!=null || !stack.isEmpty()){
             if(node!=null){
@@ -60,7 +60,7 @@ public class TreeUtils {
         }
     }
 
-    //ä¸­åºéå†äºŒå‰æ ‘  é€’å½’
+    //ÖĞĞò±éÀú¶ş²æÊ÷  µİ¹é
     public static void inOrder(BiTreeNode node){
         if(node==null){
             return;
@@ -70,7 +70,7 @@ public class TreeUtils {
         inOrder(node.getRightChild());
     }
 
-    //ä¸­åºéå†äºŒå‰æ ‘ éé€’å½’
+    //ÖĞĞò±éÀú¶ş²æÊ÷ ·Çµİ¹é
     public static void inOrder(BiTreeNode node,Stack<BiTreeNode> stack){
         while(node!=null || !stack.isEmpty()){
             if(node!=null){
@@ -85,7 +85,7 @@ public class TreeUtils {
         }
     }
 
-    //ååºéå†äºŒå‰æ ‘ é€’å½’
+    //ºóĞò±éÀú¶ş²æÊ÷ µİ¹é
     public static void postOrder(BiTreeNode node){
         if(node==null){
             return;
@@ -95,7 +95,7 @@ public class TreeUtils {
         System.out.print(node.getData()+"---");
     }
 
-    //ååºéå†äºŒå‰æ ‘ éé€’å½’
+    //ºóĞò±éÀú¶ş²æÊ÷ ·Çµİ¹é
     public static void postOrder(BiTreeNode node,Stack<BiTreeNode> stack){
         while(node!=null || !stack.isEmpty()){
             if(node!=null){
@@ -128,17 +128,17 @@ class myTest{
         Stack<BiTreeNode> stack=new Stack<>();
 //        BiTreeNode root = TreeUtils.buildTree(str, 0);
         BiTreeNode root = TreeUtils.buildTree(str1);
-        System.out.println("å‰åºé€’å½’éå†");
+        System.out.println("Ç°Ğòµİ¹é±éÀú");
         TreeUtils.preOrder(root);
-        System.out.println("\nä¸­åºé€’å½’éå†");
+        System.out.println("\nÖĞĞòµİ¹é±éÀú");
         TreeUtils.inOrder(root);
-        System.out.println("\nåç»­é€’å½’éå†");
+        System.out.println("\nºóĞøµİ¹é±éÀú");
         TreeUtils.postOrder(root);
-        System.out.println("\nå‰åºéé€’å½’éå†");
+        System.out.println("\nÇ°Ğò·Çµİ¹é±éÀú");
         TreeUtils.preOrder(root,stack);
-        System.out.println("\nä¸­åºéé€’å½’éå†");
+        System.out.println("\nÖĞĞò·Çµİ¹é±éÀú");
         TreeUtils.inOrder(root,stack);
-        System.out.println("\nåç»­éé€’å½’éå†");
+        System.out.println("\nºóĞø·Çµİ¹é±éÀú");
         TreeUtils.postOrder(root,stack);
     }
 }

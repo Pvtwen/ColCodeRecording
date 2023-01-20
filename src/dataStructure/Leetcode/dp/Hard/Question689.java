@@ -32,9 +32,9 @@ public class Question689 {
             System.out.println("dp[i][j]:" + dp[i][j] + ",dp[i+1][j]:" +dp[i+1][j]+",dp[i+k][j-1]+sum[i+k-1]-sum[i-1]:"+(dp[i + k][j - 1] + sum[i + k - 1] - sum[i - 1]));
             if(dp[i+1][j]>dp[i+k][j-1]+sum[i+k-1]-sum[i-1]){
                 i++;
-            }else{
-                ans[idx]=i-1;
-                i+=k;
+            }else {
+                ans[idx] = i - 1;
+                i += k;
                 idx++;
                 j--;
             }

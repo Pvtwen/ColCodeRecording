@@ -27,7 +27,7 @@ public class Uva140 {
         for (String s1 : split) {
             char[] arr = s1.toCharArray();
             int i = arr[0] - 'A';
-            set.put(i,new ArrayList<>());
+            if(!set.containsKey(i)) set.put(i,new ArrayList<>());
             List<Integer> l1 = set.get(i);
             for(int j=2;j<arr.length;j++){
                 int val = arr[j] - 'A';
@@ -101,12 +101,12 @@ public class Uva140 {
                 // 如果已经访问过该邻接点 则计算两点之间的距离 如果大于等于minBroad 那么最优解比不可能是该条路径 剪枝
                 else{
                     int abs = Math.abs(map.get(neigh) - map.get(res[i]));
-                    if(abs>=minBroad) return;
+                    if(abs>minBroad) return;
                 }
             }
             // 遍历完之后 还需要再剪枝 看m的值和minBroad。m的意思就是还没有确定位置的邻接点的最优位置就是挨着该节点
             // cur-map.get(res[i]) +m 即为当前最优解 如果m>=minBroad同样不可能得到更优解 剪枝
-            if(cur-map.get(res[i])+m>=minBroad) return;
+            if(m>0 && cur-map.get(res[i])-1+m>minBroad) return;
         }
         for(int i=0;i<n;i++){
             if(arr[i][1]==0){
